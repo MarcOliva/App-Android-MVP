@@ -2,6 +2,7 @@ package com.oliva.marc.appmvp.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.oliva.marc.appmvp.R
@@ -22,7 +23,7 @@ class MainActivity : AppCompatActivity(),CountryView {
         supportActionBar?.hide()
         countryPresenter= CountryPresenterImpl(this)
         recyclerViewCountries= countries_recyclerview
-        recyclerViewCountries?.layoutManager= LinearLayoutManager(this)
+        recyclerViewCountries?.layoutManager= GridLayoutManager(this,2)
         getCountries()
 
     }
